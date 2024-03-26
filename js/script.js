@@ -177,7 +177,7 @@ window.onscroll = () => {
 
 }
 
-
+// start backend for projects
 function Connection() {
   let userConnected = false;
   let jobsConnected = false;

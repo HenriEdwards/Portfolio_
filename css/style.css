@@ -14,11 +14,8 @@
   --bg-color: #081b28;
   --second-bg-color: #112e42;
   --text-color: #ededed;
-  --main-color: #00abf0;
   --main-color: #00bf7f;
-
 }
-
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -685,18 +682,6 @@ span {
   animation: in-out 1s ease;
 }
 
-@keyframes in-out {
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(-150%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .project-column .screenshots-grid img {
   height: 225px;
   width: 350px;
@@ -744,17 +729,6 @@ span {
 
 }
 
-@keyframes left-and-right {
-  0% {
-    transform: translateX(0%) ;
-  }
-  92% {
-    transform: translateX(-160%) ;
-  }
-  100% {
-    transform: translateX(0%) ;
-  }
-}
 
 .project-display .project-image {
   flex: 0 1 auto;
@@ -998,7 +972,12 @@ section:nth-child(odd) .animate.scroll,
     flex-direction: column;
   }
 
-
+  .project-row .project-select-column{
+    flex: 0 0 5rem;
+  }
+  .project-list-column{
+    height: auto;
+  }
 
   .home-sci a {
     width: 38px;
@@ -1059,6 +1038,30 @@ section:nth-child(odd) .animate.scroll,
   }
   65%, 85% {
     background-position: 0 0;
+  }
+}
+
+@keyframes in-out {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes left-and-right {
+  0% {
+    transform: translateX(0%) ;
+  }
+  92% {
+    transform: translateX(-160%) ;
+  }
+  100% {
+    transform: translateX(0%) ;
   }
 }
 
