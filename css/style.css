@@ -830,9 +830,11 @@ span {
   animation: normal;
 }
 
-section:nth-child(odd) .animate.scroll,
-.footer .animate.scroll {
+section:nth-child(odd) .animate.scroll {
   background: var(--second-bg-color);
+}
+section:nth-child(odd) .footer .animate.scroll {
+  background: var(--bg-color);
 }
 
 .education .education-box .animate.scroll {
