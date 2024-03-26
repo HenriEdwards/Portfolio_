@@ -118,8 +118,8 @@ list.forEach(function(item) {
       projImg2.src = data[itemId].images[1];
       projImg3.src = data[itemId].images[2];
       projImg4.src = data[itemId].images[3];
-      btn1.src = data[itemId].links[0];
-      btn1.src = data[itemId].links[1];
+      btn1.href = data[itemId].links[0];
+      btn2.href = data[itemId].links[1];
 
       projImages.style.display = 'inline-flex';
       btns.style.display = 'flex';
@@ -176,3 +176,25 @@ window.onscroll = () => {
   footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 
 }
+
+
+function Connection() {
+  let userConnected = false;
+  let jobsConnected = false;
+
+  const fetchUserConnection = async () => {
+    const response = await fetch('https://user-live.onrender.com/api/users', {
+      method: 'POST',
+    });
+  };
+
+  const fetchJobConnection = async () => {
+    const response = await fetch('https://job-manager-8erb.onrender.com/api/jobs', {
+      method: 'POST',
+    });
+  };
+  fetchUserConnection();
+  fetchJobConnection();
+}
+
+Connection();
