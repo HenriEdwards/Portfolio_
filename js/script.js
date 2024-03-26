@@ -82,7 +82,8 @@ list.forEach(function(item) {
     // animation
     projDisplay.classList.add('slide-in');
     // change layout for projects
-    headingDescription.style.display = 'block';
+    // headingDescription.style.display = 'block';
+    headingDescription.classList.add('active');
     projectDescriptionCol.style.margin = '0';
     projDisplay.style.display = 'flex';
 

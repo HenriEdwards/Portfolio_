@@ -380,7 +380,6 @@ span {
 
 /* skills */
 .skills {
-  /* min-height: auto; */
   padding-bottom: 7rem;
   background: var(--second-bg-color);
 }
@@ -542,26 +541,18 @@ span {
 
 .project-column {
   display: flex;
-  /* flex-wrap: wrap;  */
   height: 600px;
   overflow: hidden;
 }
 
 .project-row .project-select-column {
   flex: 0 0 30rem;
-  position: relative;
-  gap: 2rem;
   height: 100%;
-  /* transition: 5.3s; */
 }
-
 
 .project-row .project-view-column {
   flex: 1 1 40rem;
-  position: relative;
-  gap: 2rem;
-  height: 100%;
-  margin-top: 53px;
+
 }
 
 .project-row .project-view-column .animate.scroll {
@@ -576,18 +567,32 @@ span {
   margin: 0 0 1.5rem 0;
 }
 
-.project-list-column{
-  height: 100%;
-  padding: 1.5rem;
-  border: .2rem solid var(--main-color);
-  border-radius: .6rem;
-  /* transition: transform 0.3s ease-in-out; */
+.project-view-column .title {
+  opacity: 0;
+  transition: 1s;
 }
 
+.project-view-column .title.active {
+  opacity: 1;
+}
 .project-view-column {
   flex-direction: 3 1 auto;
+  position: relative;
 }
 
+.project-list-column{
+  position: relative;
+}
+
+.project-list-column .project-box {
+  position: relative;
+  border: .2rem solid var(--main-color);
+  border-radius: .6rem;
+  height: 100%;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
 .project-list-column h3 {
   font-size: 1.7rem;
   color: var(--text-color);
@@ -629,9 +634,6 @@ span {
   font-size: 1.4rem;
 }
 
-.project-view-column h3.title {
-  display: none;
-}
 
 .project-row .project-column {
   position: relative;
@@ -652,6 +654,7 @@ span {
   gap: 2rem;
   animation: left-to-right 10.5s linear infinite alternate;
   transition: .5s linear;
+
 }
 
 .project-column .screenshots-grid::before {
