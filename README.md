@@ -1,4 +1,4 @@
-#### Portfolio in progress
+#### Portfolio in development
 
 Developed using HTML, CSS & JavaScript.
 
