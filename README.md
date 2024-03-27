@@ -1,8 +1,6 @@
-#### Portfolio in development
+#### Portfolio
 
 Developed using HTML, CSS & JavaScript.
 
-## Live testing
+## Live
 [Link](https://henriedwards.netlify.app)
-
-## Screenshot

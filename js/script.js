@@ -10,21 +10,21 @@ menuIcon.onclick = () => {
 var data = {
   user: {
     name: "User Credentials Manager",
-    description: "This is a full-stack web application built aims to be a centralized system to manage login details across multiple continents, languages, and websites.",
+    description: "This is a full-stack web application built to be a centralized system to manage login information securely, by use of authentication & authorization, cookies and JWT.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-User-Manager", "https://resplendent-pithivier-138605.netlify.app"],
     images: ["./images/img (12).png", "./images/img (13).png", "./images/img (14).png", "./images/img (15).png"]
   },
   gericht: {
     name: "Gericht Restaurant",
-    description: "This is a restaurant themed front-end web application, following a Figma design.",
+    description: "This is a restaurant themed web design.",
     skills: ["React", "CSS"],
     links: ["https://github.com/HenriEdwards/Frontend-restaurant", "https://gericht-za.netlify.app"],
     images: ["./images/img (1).png", "./images/img (8).png", "./images/img (9).png", "./images/img (18).png"]
   },
   gpt: {
     name: "GPT-3",
-    description: "This is a GTP-3 themed front-end web application, following a Figma design.",
+    description: "This is a GPT-3 themed web design.",
     skills: ["React", "CSS"],
     links: ["https://github.com/HenriEdwards/Frontend-gpt3", "https://spiffy-moonbeam-8bca8a.netlify.app"],
     images: ["./images/img (17).png", "./images/img (10).png", "./images/img (11).png", "./images/img (16).png"]
