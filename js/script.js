@@ -76,15 +76,17 @@ let projectDescriptionCol = document.querySelector('.project-view-column');
 // heading above upper level container for project description 
 let headingDescription = document.querySelector('.project-view-column h3.title');
 
+// add onClick functionality to project list
 list.forEach(function(item) {
   item.addEventListener('click', function() {
     let itemId = item.classList[1];
-    // animation
+    // animation project descriptions
     projDisplay.classList.add('slide-in');
-    // change layout for projects
-    // headingDescription.style.display = 'block';
+    // display description column title
     headingDescription.classList.add('active');
+    // reset margin
     projectDescriptionCol.style.margin = '0';
+    // display project descriptions
     projDisplay.style.display = 'flex';
 
     screensGrid.classList.add('shaded');
@@ -96,7 +98,7 @@ list.forEach(function(item) {
 
     item.classList.toggle('active');
 
-    // change data
+    // change data - timeout to correspond to animation
     setTimeout(function() {
       names.innerText = data[itemId].name;
       descriptions.innerText = data[itemId].description;
@@ -114,11 +116,7 @@ list.forEach(function(item) {
         skills.appendChild(temp);
       })
 
-      // add btn and img links
-      projImg1.src = data[itemId].images[0];
-      projImg2.src = data[itemId].images[1];
-      projImg3.src = data[itemId].images[2];
-      projImg4.src = data[itemId].images[3];
+      // add btn 
       btn1.href = data[itemId].links[0];
       btn2.href = data[itemId].links[1];
 
@@ -126,14 +124,20 @@ list.forEach(function(item) {
       btns.style.display = 'flex';
     }, 500); 
 
+    // img links
+    setTimeout(function() {
+      projImg1.src = data[itemId].images[0];
+      projImg2.src = data[itemId].images[1];
+      projImg3.src = data[itemId].images[2];
+      projImg4.src = data[itemId].images[3];
+    }, 250)
+    
     // remove slide
-
     setTimeout(function() {
       projDisplay.classList.remove('slide-in');
     }, 1000)
   });
 });
-
 
 // scroll sections
 let sections = document.querySelectorAll('section');
@@ -157,9 +161,9 @@ window.onscroll = () => {
       sec.classList.add('show-animate');
     }
     // animation repeats on scroll
-    else {
-      sec.classList.remove('show-animate');
-    }
+    // else {
+    //   sec.classList.remove('show-animate');
+    // }
 
   });
   // sticky header
