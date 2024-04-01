@@ -10,7 +10,7 @@ menuIcon.onclick = () => {
 var data = {
   user: {
     name: "User Credentials Manager",
-    description: "This is a full-stack web application built to be a centralized system to manage login information securely, by use of authentication & authorization, cookies and JWT.",
+    description: "This is a full-stack web application built to be a centralized system to manage login information securely, by use of authentication & authorization, cookies and JWT. Please use the following login information: Username: 'Henri', Password: 'justlogin'.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-User-Manager", "https://resplendent-pithivier-138605.netlify.app"],
     images: ["./images/img (12).png", "./images/img (13).png", "./images/img (14).png", "./images/img (15).png"]
