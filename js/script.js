@@ -13,35 +13,35 @@ var data = {
     description: "This is a full-stack web application built to be a centralized system to manage login information securely, by use of authentication & authorization, cookies and JWT. Please use the following login information: Username: 'Henri', Password: 'justlogin'.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-User-Manager", "https://resplendent-pithivier-138605.netlify.app"],
-    images: ["./images/img (12).png", "./images/img (13).png", "./images/img (14).png", "./images/img (15).png"]
+    images: ["./images/img (12).jpg", "./images/img (13).jpg", "./images/img (14).jpg", "./images/img (15).jpg"]
   },
   gericht: {
     name: "Gericht Restaurant",
     description: "This is a restaurant themed web design.",
     skills: ["React", "CSS"],
     links: ["https://github.com/HenriEdwards/Frontend-restaurant", "https://gericht-za.netlify.app"],
-    images: ["./images/img (1).png", "./images/img (8).png", "./images/img (9).png", "./images/img (18).png"]
+    images: ["./images/img (1).jpg", "./images/img (8).jpg", "./images/img (9).jpg", "./images/img (18).jpg"]
   },
   gpt: {
     name: "GPT-3",
     description: "This is a GPT-3 themed web design.",
     skills: ["React", "CSS"],
     links: ["https://github.com/HenriEdwards/Frontend-gpt3", "https://spiffy-moonbeam-8bca8a.netlify.app"],
-    images: ["./images/img (17).png", "./images/img (10).png", "./images/img (11).png", "./images/img (16).png"]
+    images: ["./images/img (17).jpg", "./images/img (10).jpg", "./images/img (11).jpg", "./images/img (16).jpg"]
   },
   hobby: {
     name: "Hobby Website",
     description: "Website dedicated to my hobbies.",
     skills: ["HTML", "CSS", "JavaScript"],
     links: ["https://github.com/HenriEdwards/Hobby-Website", "https://voluble-piroshki-c475fd.netlify.app"],
-    images: ["./images/img (3).png", "./images/img (4).png", "./images/img (5).png", "./images/img (6).png"]
+    images: ["./images/img (2).jpg", "./images/img (3).jpg", "./images/img (4).jpg", "./images/img (5).jpg"]
   },
   jobs: {
     name: "Maintenance Jobs Manager",
     description: "This is a full-stack web application built for maintenance management. It allows users to create, archive, update, and batch update maintenance jobs.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-Maintenance-Manager", "https://fascinating-concha-b3f0a4.netlify.app"],
-    images: ["./images/img (19).png", "./images/img (20).png", "./images/img (21).png", "./images/img (22).png"]
+    images: ["./images/img (19).jpg", "./images/img (20).jpg", "./images/img (21).jpg", "./images/img (22).jpg"]
   }
 };
 
@@ -120,7 +120,7 @@ list.forEach(function(item) {
       btn1.href = data[itemId].links[0];
       btn2.href = data[itemId].links[1];
 
-      projImages.style.display = 'inline-flex';
+      projImages.style.display = 'flex';
       btns.style.display = 'flex';
     }, 500); 
 

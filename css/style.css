@@ -704,7 +704,7 @@ span {
 }
 
 .project-info{
-  flex: 3 0 auto;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -722,12 +722,14 @@ span {
 }
 
 .project-image{
+  height: 100%;
   display: none;
   animation: left-and-right 16s linear infinite;
 }
 
 .project-image img {
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 
