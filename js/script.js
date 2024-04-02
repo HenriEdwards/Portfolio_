@@ -130,7 +130,7 @@ list.forEach(function(item) {
       projImg2.src = data[itemId].images[1];
       projImg3.src = data[itemId].images[2];
       projImg4.src = data[itemId].images[3];
-    }, 250)
+    }, 100)
     
     // remove slide
     setTimeout(function() {
