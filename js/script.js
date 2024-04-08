@@ -42,6 +42,13 @@ var data = {
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-Maintenance-Manager", "https://fascinating-concha-b3f0a4.netlify.app"],
     images: ["./images/img (19).jpg", "./images/img (20).jpg", "./images/img (21).jpg", "./images/img (22).jpg"]
+  },
+  bank: {
+    name: "HooBank",
+    description: "Website developed for the fictitious company, HooBank.",
+    skills: ["React", "Tailwind CSS"],
+    links: ["https://github.com/HenriEdwards/HooBank-Web", "https://helpful-smakager-177085.netlify.app"],
+    images: ["./images/img (23).jpg", "./images/img (24).jpg", "./images/img (25).jpg", "./images/img (26).jpg"]
   }
 };
 
