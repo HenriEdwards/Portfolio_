@@ -52,7 +52,7 @@ var data = {
   },
   iss: {
     name: "International Space Station - Live Location",
-    description: "This website shows the live location of the ISS in latitude & longitude, as well as the closest Capital City & Country calculated using the Haversine formula.",
+    description: "This website shows the live location of the ISS in latitude & longitude, as well as the closest capital city & country calculated using the Haversine formula.",
     skills: ["HTML", "CSS", "JavaScript"],
     links: ["https://github.com/HenriEdwards/ISS", "https://iss-live-locations.netlify.app"],
     images: ["./images/sc.jpg", "./images/sc.jpg", "./images/sc.jpg", "./images/sc.jpg"]
