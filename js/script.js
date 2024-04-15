@@ -49,6 +49,13 @@ var data = {
     skills: ["React", "Tailwind CSS"],
     links: ["https://github.com/HenriEdwards/HooBank-Web", "https://helpful-smakager-177085.netlify.app"],
     images: ["./images/img (23).jpg", "./images/img (24).jpg", "./images/img (25).jpg", "./images/img (26).jpg"]
+  },
+  iss: {
+    name: "International Space Station - Live Location",
+    description: "This website shows the live location of the ISS in latitude & longitude, as well as the closest Capital City & Country calculated using the Haversine formula.",
+    skills: ["HTML", "CSS", "JavaScript"],
+    links: ["https://github.com/HenriEdwards/ISS", "https://iss-live-locations.netlify.app"],
+    images: ["./images/sc.jpg", "./images/sc.jpg", "./images/sc.jpg", "./images/sc.jpg"]
   }
 };
 
