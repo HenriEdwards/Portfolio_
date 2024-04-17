@@ -2,10 +2,35 @@
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-};
+// list of projects
+var list = document.querySelectorAll('.project-list-column h3');
+
+// project description container
+let projDisplay = document.querySelector('.project-display');
+
+// info to change
+let btns = document.querySelector('.btn-box');
+let projImages = document.querySelector('.project-image');
+
+let names = document.querySelector('.project-name');
+let descriptions = document.querySelector('.project-description');
+let skills = document.querySelector('.project-skills-list');
+var images = document.querySelectorAll('.image');
+let projImg1 = document.querySelector('.image-1');
+let projImg2 = document.querySelector('.image-2');
+let projImg3 = document.querySelector('.image-3');
+let projImg4 = document.querySelector('.image-4');
+let btn1 = document.querySelector('.btn-1');
+let btn2 = document.querySelector('.btn-2');
+
+// landing images
+let screensGrid = document.querySelector('.screenshots-grid');
+
+// upper level container for project description 
+let projectDescriptionCol = document.querySelector('.project-view-column');
+
+// heading above upper level container for project description 
+let headingDescription = document.querySelector('.project-view-column h3.title');
 
 var data = {
   user: {
@@ -59,41 +84,66 @@ var data = {
   }
 };
 
+// Function loops through project images and creates a list of pre-loaded images
+// Primary use, due to slow Netlify servers...
+function preloadImages(imageUrls) {
+  const preloadedImages = [];
+  for (let i = 0; i < imageUrls.length; i++) {
+    const img = new Image();
+    img.src = imageUrls[i];
+    preloadedImages.push(img);
+  }
+  return preloadedImages;
+}
 
-// list of projects
-var list = document.querySelectorAll('.project-list-column h3');
+// Pre-load the images
+const dynamicImageUrls = [
+  "./images/rest (1).jpg",
+  "./images/rest (2).jpg",
+  "./images/rest (3).jpg",
+  "./images/rest (4).jpg",
 
-// project description container
-let projDisplay = document.querySelector('.project-display');
+  "./images/login (1).jpg",
+  "./images/login (2).jpg",
+  "./images/login (3).jpg",
+  "./images/login (4).jpg",
 
-// info to change
-let btns = document.querySelector('.btn-box');
-let projImages = document.querySelector('.project-image');
+  "./images/jobs (1).jpg",
+  "./images/jobs (2).jpg",
+  "./images/jobs (3).jpg",
+  "./images/jobs (4).jpg",
 
-let names = document.querySelector('.project-name');
-let descriptions = document.querySelector('.project-description');
-let skills = document.querySelector('.project-skills-list');
-var images = document.querySelectorAll('.image');
-let projImg1 = document.querySelector('.image-1');
-let projImg2 = document.querySelector('.image-2');
-let projImg3 = document.querySelector('.image-3');
-let projImg4 = document.querySelector('.image-4');
-let btn1 = document.querySelector('.btn-1');
-let btn2 = document.querySelector('.btn-2');
+  "./images/iss.jpg",
 
-// landing images
-let screensGrid = document.querySelector('.screenshots-grid');
+  "./images/hobby (1).jpg",
+  "./images/hobby (2).jpg",
+  "./images/hobby (3).jpg",
+  "./images/hobby (4).jpg",
 
-// upper level container for project description 
-let projectDescriptionCol = document.querySelector('.project-view-column');
+  "./images/gpt (1).jpg",
+  "./images/gpt (2).jpg",
+  "./images/gpt (3).jpg",
+  "./images/gpt (4).jpg",
 
-// heading above upper level container for project description 
-let headingDescription = document.querySelector('.project-view-column h3.title');
+  "./images/bank (1).jpg",
+  "./images/bank (2).jpg",
+  "./images/bank (3).jpg",
+  "./images/bank (4).jpg",
+];
+
+const preloadedImages = preloadImages(dynamicImageUrls);
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+};
 
 // add onClick functionality to project list
 list.forEach(function(item) {
   item.addEventListener('click', function() {
+    // project name/id
     let itemId = item.classList[1];
+
     // animation project descriptions
     projDisplay.classList.add('slide-in');
     // display description column title
@@ -139,13 +189,61 @@ list.forEach(function(item) {
     }, 500); 
 
     // img links
-    setTimeout(function() {
-      projImg1.src = data[itemId].images[0];
-      projImg2.src = data[itemId].images[1];
-      projImg3.src = data[itemId].images[2];
-      projImg4.src = data[itemId].images[3];
-    }, 200)
-    
+    // setTimeout(function() {
+    //   projImg1.src = data[itemId].images[0];
+    //   projImg2.src = data[itemId].images[1];
+    //   projImg3.src = data[itemId].images[2];
+    //   projImg4.src = data[itemId].images[3];
+    // }, 200)
+
+  // Set project pre-laoded images 
+  setTimeout(function() {
+    switch (itemId) {
+      case 'user':
+        projImg1.src = preloadedImages[4].src;
+        projImg2.src = preloadedImages[5].src;
+        projImg3.src = preloadedImages[6].src;
+        projImg4.src = preloadedImages[7].src;
+        break;
+      case 'gericht':
+        projImg1.src = preloadedImages[0].src;
+        projImg2.src = preloadedImages[1].src;
+        projImg3.src = preloadedImages[2].src;
+        projImg4.src = preloadedImages[3].src;
+        break;
+      case 'gpt':
+        projImg1.src = preloadedImages[17].src;
+        projImg2.src = preloadedImages[18].src;
+        projImg3.src = preloadedImages[19].src;
+        projImg4.src = preloadedImages[20].src;
+        break;
+      case 'hobby':
+        projImg1.src = preloadedImages[13].src;
+        projImg2.src = preloadedImages[14].src;
+        projImg3.src = preloadedImages[15].src;
+        projImg4.src = preloadedImages[16].src;
+        break;
+      case 'jobs':
+        projImg1.src = preloadedImages[8].src;
+        projImg2.src = preloadedImages[9].src;
+        projImg3.src = preloadedImages[10].src;
+        projImg4.src = preloadedImages[11].src;
+        break;
+      case 'bank':
+        projImg1.src = preloadedImages[21].src;
+        projImg2.src = preloadedImages[22].src;
+        projImg3.src = preloadedImages[23].src;
+        projImg4.src = preloadedImages[24].src;
+        break;
+      case 'iss':
+        projImg1.src = preloadedImages[12].src;
+        projImg2.src = preloadedImages[12].src;
+        projImg3.src = preloadedImages[12].src;
+        projImg4.src = preloadedImages[12].src;
+        break;
+    }
+    }, 400)
+
     // remove slide
     setTimeout(function() {
       projDisplay.classList.remove('slide-in');
@@ -196,24 +294,42 @@ window.onscroll = () => {
 
 }
 
-// start backend for projects
+// start backend for web projects
+// needed due to slow Render free version... 
+// Temp work-around to keep experience smooth
 function Connection() {
   let userConnected = false;
   let jobsConnected = false;
 
   const fetchUserConnection = async () => {
-    const response = await fetch('https://user-live.onrender.com/api/users', {
-      method: 'POST',
-    });
+    try {
+      const response = await fetch('https://user-live.onrender.com/api/users/login', {
+        method: 'POST',
+      });
+      console.log('Backend for User-Website Connection Request Sent...ignore');
+    } catch(e) {
+      console.log('Not serious...',e);
+    }
   };
 
   const fetchJobConnection = async () => {
-    const response = await fetch('https://job-manager-8erb.onrender.com/api/jobs', {
-      method: 'POST',
-    });
+    try {
+      const response = await fetch('https://job-manager-8erb.onrender.com/api/jobs', {
+        method: 'POST',
+      });
+      console.log('Backend for Jobs-Website Connection Request Sent...ignore');
+    } catch(e) {
+      console.log('Not serious...',e);
+    }
   };
   fetchUserConnection();
   fetchJobConnection();
 }
 
+
 Connection();
+
+// keep servers up/busy
+setInterval(() => {
+  Connection();
+}, 60000);
