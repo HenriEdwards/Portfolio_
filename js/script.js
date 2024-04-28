@@ -113,7 +113,7 @@ const dynamicImageUrls = [
   "./images/jobs (3).jpg",
   "./images/jobs (4).jpg",
 
-  "./images/iss.jpg",
+  "./images/iss1.jpg",
 
   "./images/hobby (1).jpg",
   "./images/hobby (2).jpg",
@@ -129,6 +129,10 @@ const dynamicImageUrls = [
   "./images/bank (2).jpg",
   "./images/bank (3).jpg",
   "./images/bank (4).jpg",
+
+  "./images/iss2.jpg",
+  "./images/iss3.jpg",
+  "./images/iss4.jpg",
 ];
 
 const preloadedImages = preloadImages(dynamicImageUrls);
@@ -237,9 +241,9 @@ list.forEach(function(item) {
         break;
       case 'iss':
         projImg1.src = preloadedImages[12].src;
-        projImg2.src = preloadedImages[12].src;
-        projImg3.src = preloadedImages[12].src;
-        projImg4.src = preloadedImages[12].src;
+        projImg2.src = preloadedImages[25].src;
+        projImg3.src = preloadedImages[26].src;
+        projImg4.src = preloadedImages[27].src;
         break;
     }
     }, 400)
