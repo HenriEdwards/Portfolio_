@@ -1049,11 +1049,11 @@ section:nth-child(odd) .footer .animate.scroll {
 }
 
 .slide-out {
-  animation: slide-out 1s ease forwards;
+  animation: slide-out .5s ease forwards;
 }
 
 .slide-in {
-  animation: slide-in 1s ease forwards;
+  animation: slide-in .5s ease forwards;
 }
 
 
