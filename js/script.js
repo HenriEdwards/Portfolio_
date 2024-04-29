@@ -38,104 +38,54 @@ var data = {
     description: "This is a full-stack web application built to be a centralized system to manage login information securely, by use of authentication & authorization, cookies and JWT. Please use the following login information: Username: 'Henri', Password: 'justlogin'.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-User-Manager", "https://resplendent-pithivier-138605.netlify.app"],
-    images: ["./images/img (12).jpg", "./images/img (13).jpg", "./images/img (14).jpg", "./images/img (15).jpg"]
+    images: ["./images/login (1).jpg", "./images/login (2).jpg", "./images/login (3).jpg", "./images/login (4).jpg"]
   },
   gericht: {
     name: "Gericht Restaurant",
     description: "This is a restaurant themed web design.",
     skills: ["React", "CSS"],
     links: ["https://github.com/HenriEdwards/Frontend-restaurant", "https://gericht-za.netlify.app"],
-    images: ["./images/img (1).jpg", "./images/img (8).jpg", "./images/img (9).jpg", "./images/img (18).jpg"]
+    images: ["./images/rest (1).jpg", "./images/rest (2).jpg", "./images/rest (3).jpg", "./images/rest (4).jpg"]
   },
   gpt: {
     name: "GPT-3",
     description: "This is a GPT-3 themed web design.",
     skills: ["React", "CSS"],
     links: ["https://github.com/HenriEdwards/Frontend-gpt3", "https://spiffy-moonbeam-8bca8a.netlify.app"],
-    images: ["./images/img (17).jpg", "./images/img (10).jpg", "./images/img (11).jpg", "./images/img (16).jpg"]
+    images: ["./images/gpt (1).jpg", "./images/gpt (2).jpg", "./images/gpt (3).jpg", "./images/gpt (4).jpg"]
   },
   hobby: {
     name: "Hobby Website",
     description: "Website dedicated to my hobbies.",
     skills: ["HTML", "CSS", "SCSS", "JavaScript"],
     links: ["https://github.com/HenriEdwards/Hobby-Website", "https://voluble-piroshki-c475fd.netlify.app"],
-    images: ["./images/img (2).jpg", "./images/img (3).jpg", "./images/img (4).jpg", "./images/img (5).jpg"]
+    images: ["./images/hobby (1).jpg", "./images/hobby (2).jpg", "./images/hobby (3).jpg", "./images/hobby (4).jpg"]
   },
   jobs: {
     name: "Maintenance Jobs Manager",
     description: "This is a full-stack web application built for maintenance management. It allows users to create, archive, update, and batch update maintenance jobs.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-Maintenance-Manager", "https://fascinating-concha-b3f0a4.netlify.app"],
-    images: ["./images/img (19).jpg", "./images/img (20).jpg", "./images/img (21).jpg", "./images/img (22).jpg"]
+    images: ["./images/jobs (1).jpg", "./images/jobs (2).jpg", "./images/jobs (3).jpg", "./images/jobs (4).jpg"]
   },
   bank: {
     name: "HooBank",
     description: "Website developed for the fictitious company, HooBank.",
     skills: ["React", "Tailwind CSS"],
     links: ["https://github.com/HenriEdwards/HooBank-Web", "https://helpful-smakager-177085.netlify.app"],
-    images: ["./images/img (23).jpg", "./images/img (24).jpg", "./images/img (25).jpg", "./images/img (26).jpg"]
+    images: ["./images/bank (1).jpg", "./images/bank (2).jpg", "./images/bank (3).jpg", "./images/bank (4).jpg"]
   },
   iss: {
     name: "International Space Station - Live Location",
     description: "This website shows the live location of the ISS in latitude & longitude, as well as the closest capital city & country calculated using the Haversine formula.",
     skills: ["HTML", "CSS", "JavaScript"],
     links: ["https://github.com/HenriEdwards/ISS", "https://iss-live-locations.netlify.app"],
-    images: ["./images/sc.jpg", "./images/sc.jpg", "./images/sc.jpg", "./images/sc.jpg"]
+    images: ["./images/iss1.jpg", "./images/iss2.jpg", "./images/iss3.jpg", "./images/iss4.jpg"]
   }
 };
 
 // Function loops through project images and creates a list of pre-loaded images
 // Primary use, due to slow Netlify servers...
-function preloadImages(imageUrls) {
-  const preloadedImages = [];
-  for (let i = 0; i < imageUrls.length; i++) {
-    const img = new Image();
-    img.src = imageUrls[i];
-    preloadedImages.push(img);
-  }
-  return preloadedImages;
-}
-
-// Pre-load the images
-const dynamicImageUrls = [
-  "./images/rest (1).jpg",
-  "./images/rest (2).jpg",
-  "./images/rest (3).jpg",
-  "./images/rest (4).jpg",
-
-  "./images/login (1).jpg",
-  "./images/login (2).jpg",
-  "./images/login (3).jpg",
-  "./images/login (4).jpg",
-
-  "./images/jobs (1).jpg",
-  "./images/jobs (2).jpg",
-  "./images/jobs (3).jpg",
-  "./images/jobs (4).jpg",
-
-  "./images/iss1.jpg",
-
-  "./images/hobby (1).jpg",
-  "./images/hobby (2).jpg",
-  "./images/hobby (3).jpg",
-  "./images/hobby (4).jpg",
-
-  "./images/gpt (1).jpg",
-  "./images/gpt (2).jpg",
-  "./images/gpt (3).jpg",
-  "./images/gpt (4).jpg",
-
-  "./images/bank (1).jpg",
-  "./images/bank (2).jpg",
-  "./images/bank (3).jpg",
-  "./images/bank (4).jpg",
-
-  "./images/iss2.jpg",
-  "./images/iss3.jpg",
-  "./images/iss4.jpg",
-];
-
-const preloadedImages = preloadImages(dynamicImageUrls);
 
 menuIcon.onclick = () => {
   menuIcon.classList.toggle('bx-x');
@@ -190,70 +140,20 @@ list.forEach(function(item) {
 
       projImages.style.display = 'flex';
       btns.style.display = 'flex';
+
+      projImg1.src = data[itemId].images[0];
+      projImg2.src = data[itemId].images[1];
+      projImg3.src = data[itemId].images[2];
+      projImg4.src = data[itemId].images[3];
     }, 500); 
 
-    // img links
-    // setTimeout(function() {
-    //   projImg1.src = data[itemId].images[0];
-    //   projImg2.src = data[itemId].images[1];
-    //   projImg3.src = data[itemId].images[2];
-    //   projImg4.src = data[itemId].images[3];
-    // }, 200)
-
-  // Set project pre-laoded images 
-  setTimeout(function() {
-    switch (itemId) {
-      case 'user':
-        projImg1.src = preloadedImages[4].src;
-        projImg2.src = preloadedImages[5].src;
-        projImg3.src = preloadedImages[6].src;
-        projImg4.src = preloadedImages[7].src;
-        break;
-      case 'gericht':
-        projImg1.src = preloadedImages[0].src;
-        projImg2.src = preloadedImages[1].src;
-        projImg3.src = preloadedImages[2].src;
-        projImg4.src = preloadedImages[3].src;
-        break;
-      case 'gpt':
-        projImg1.src = preloadedImages[17].src;
-        projImg2.src = preloadedImages[18].src;
-        projImg3.src = preloadedImages[19].src;
-        projImg4.src = preloadedImages[20].src;
-        break;
-      case 'hobby':
-        projImg1.src = preloadedImages[13].src;
-        projImg2.src = preloadedImages[14].src;
-        projImg3.src = preloadedImages[15].src;
-        projImg4.src = preloadedImages[16].src;
-        break;
-      case 'jobs':
-        projImg1.src = preloadedImages[8].src;
-        projImg2.src = preloadedImages[9].src;
-        projImg3.src = preloadedImages[10].src;
-        projImg4.src = preloadedImages[11].src;
-        break;
-      case 'bank':
-        projImg1.src = preloadedImages[21].src;
-        projImg2.src = preloadedImages[22].src;
-        projImg3.src = preloadedImages[23].src;
-        projImg4.src = preloadedImages[24].src;
-        break;
-      case 'iss':
-        projImg1.src = preloadedImages[12].src;
-        projImg2.src = preloadedImages[25].src;
-        projImg3.src = preloadedImages[26].src;
-        projImg4.src = preloadedImages[27].src;
-        break;
-    }
-    }, 400)
 
     // remove slide
     setTimeout(function() {
       projDisplay.classList.remove('slide-in');
     }, 1000)
-  });
-});
+  })
+})
 
 // scroll sections
 let sections = document.querySelectorAll('section');
