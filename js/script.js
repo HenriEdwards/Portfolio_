@@ -213,46 +213,89 @@ list.forEach(function(item) {
         // Update project images
         switch (itemId) {
           case 'user':
-            projImg1.src = loadedImages[4].src;
-            projImg2.src = loadedImages[5].src;
-            projImg3.src = loadedImages[6].src;
-            projImg4.src = loadedImages[7].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[4]);
+            projImages.appendChild(loadedImages[5]);
+            projImages.appendChild(loadedImages[6]);
+            projImages.appendChild(loadedImages[7]);
+
             break;
           case 'gericht':
-            projImg1.src = loadedImages[0].src;
-            projImg2.src = loadedImages[1].src;
-            projImg3.src = loadedImages[2].src;
-            projImg4.src = loadedImages[3].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[0]);
+            projImages.appendChild(loadedImages[1]);
+            projImages.appendChild(loadedImages[2]);
+            projImages.appendChild(loadedImages[3]);
             break;
           case 'gpt':
-            projImg1.src = loadedImages[20].src;
-            projImg2.src = loadedImages[21].src;
-            projImg3.src = loadedImages[22].src;
-            projImg4.src = loadedImages[23].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[20]);
+            projImages.appendChild(loadedImages[21]);
+            projImages.appendChild(loadedImages[22]);
+            projImages.appendChild(loadedImages[23]);
             break;
           case 'hobby':
-            projImg1.src = loadedImages[16].src;
-            projImg2.src = loadedImages[17].src;
-            projImg3.src = loadedImages[18].src;
-            projImg4.src = loadedImages[19].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[16]);
+            projImages.appendChild(loadedImages[17]);
+            projImages.appendChild(loadedImages[18]);
+            projImages.appendChild(loadedImages[19]);
             break;
           case 'jobs':
-            projImg1.src = loadedImages[8].src;
-            projImg2.src = loadedImages[9].src;
-            projImg3.src = loadedImages[10].src;
-            projImg4.src = loadedImages[11].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[8]);
+            projImages.appendChild(loadedImages[9]);
+            projImages.appendChild(loadedImages[10]);
+            projImages.appendChild(loadedImages[11]);
             break;
           case 'bank':
-            projImg1.src = loadedImages[24].src;
-            projImg2.src = loadedImages[25].src;
-            projImg3.src = loadedImages[26].src;
-            projImg4.src = loadedImages[27].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[24]);
+            projImages.appendChild(loadedImages[25]);
+            projImages.appendChild(loadedImages[26]);
+            projImages.appendChild(loadedImages[27]);
             break;
           case 'iss':
-            projImg1.src = loadedImages[12].src;
-            projImg2.src = loadedImages[13].src;
-            projImg3.src = loadedImages[14].src;
-            projImg4.src = loadedImages[15].src;
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[12]);
+            projImages.appendChild(loadedImages[13]);
+            projImages.appendChild(loadedImages[14]);
+            projImages.appendChild(loadedImages[15]);
             break;
         }
 
