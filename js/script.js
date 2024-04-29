@@ -83,6 +83,70 @@ var data = {
   }
 };
 
+var imageUrls = [
+  "./images/rest (1).jpg",
+  "./images/rest (2).jpg",
+  "./images/rest (3).jpg",
+  "./images/rest (4).jpg",
+
+  "./images/login (1).jpg",
+  "./images/login (2).jpg",
+  "./images/login (3).jpg",
+  "./images/login (4).jpg",
+
+  "./images/jobs (1).jpg",
+  "./images/jobs (2).jpg",
+  "./images/jobs (3).jpg",
+  "./images/jobs (4).jpg",
+
+  "./images/iss1.jpg",
+  "./images/iss2.jpg",
+  "./images/iss3.jpg",
+  "./images/iss4.jpg",
+
+  "./images/hobby (1).jpg",
+  "./images/hobby (2).jpg",
+  "./images/hobby (3).jpg",
+  "./images/hobby (4).jpg",
+
+  "./images/gpt (1).jpg",
+  "./images/gpt (2).jpg",
+  "./images/gpt (3).jpg",
+  "./images/gpt (4).jpg",
+
+  "./images/bank (1).jpg",
+  "./images/bank (2).jpg",
+  "./images/bank (3).jpg",
+  "./images/bank (4).jpg",
+];
+
+let loadedImages = [];
+
+function preloadImages(imageUrls) {
+  loadedImages = [];
+  var imagesToLoad = imageUrls.length;
+
+  function imageLoaded() {
+    imagesToLoad--;
+    if (imagesToLoad === 0) {
+      // All images have been loaded
+      // You can now use the preloaded images in your JavaScript code
+      console.log('All images have been preloaded.');
+      console.log(loadedImages);
+    }
+  }
+
+  for (var i = 0; i < imageUrls.length; i++) {
+    var img = new Image();
+    img.onload = imageLoaded;
+    img.src = imageUrls[i];
+    loadedImages.push(img);
+  }
+}
+
+// Call the preloadImages function when the user lands on the page
+preloadImages(imageUrls);
+
 // Function loops through project images and creates a list of pre-loaded images
 // Primary use, due to slow Netlify servers...
 
@@ -122,7 +186,7 @@ list.forEach(function(item) {
       item.classList.toggle('active');
 
       // change data - timeout to correspond to animation
-      let changeData = async () => {
+      let changeData = () => {
         names.innerText = data[itemId].name;
         descriptions.innerText = data[itemId].description;
 
@@ -147,23 +211,54 @@ list.forEach(function(item) {
         btns.style.display = 'flex';
 
         // Update project images
-        await loadImage(projImg1, data[itemId].images[0]);
-        await loadImage(projImg2, data[itemId].images[1]);
-        await loadImage(projImg3, data[itemId].images[2]);
-        await loadImage(projImg4, data[itemId].images[3]);
+        switch (itemId) {
+          case 'user':
+            projImg1.src = loadedImages[4].src;
+            projImg2.src = loadedImages[5].src;
+            projImg3.src = loadedImages[6].src;
+            projImg4.src = loadedImages[7].src;
+            break;
+          case 'gericht':
+            projImg1.src = loadedImages[0].src;
+            projImg2.src = loadedImages[1].src;
+            projImg3.src = loadedImages[2].src;
+            projImg4.src = loadedImages[3].src;
+            break;
+          case 'gpt':
+            projImg1.src = loadedImages[20].src;
+            projImg2.src = loadedImages[21].src;
+            projImg3.src = loadedImages[22].src;
+            projImg4.src = loadedImages[23].src;
+            break;
+          case 'hobby':
+            projImg1.src = loadedImages[16].src;
+            projImg2.src = loadedImages[17].src;
+            projImg3.src = loadedImages[18].src;
+            projImg4.src = loadedImages[19].src;
+            break;
+          case 'jobs':
+            projImg1.src = loadedImages[8].src;
+            projImg2.src = loadedImages[9].src;
+            projImg3.src = loadedImages[10].src;
+            projImg4.src = loadedImages[11].src;
+            break;
+          case 'bank':
+            projImg1.src = loadedImages[24].src;
+            projImg2.src = loadedImages[25].src;
+            projImg3.src = loadedImages[26].src;
+            projImg4.src = loadedImages[27].src;
+            break;
+          case 'iss':
+            projImg1.src = loadedImages[12].src;
+            projImg2.src = loadedImages[13].src;
+            projImg3.src = loadedImages[14].src;
+            projImg4.src = loadedImages[15].src;
+            break;
+        }
 
         projDisplay.classList.remove('slide-out');
         projDisplay.classList.add('slide-in');
         isAnimationComplete = true;
-      }
-
-      // Utility function to load image and return a promise
-      function loadImage(img, src) {
-        return new Promise(function(resolve, reject) {
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = src;
-        });
       }
 
       // Animation end event listener
@@ -258,68 +353,3 @@ setInterval(() => {
   Connection();
 }, 60000);
 
-
-// OLD CODE - Unfortunately not useful on slow servers (Like netflify free version, should work 100% in a production environment)
-
-// // add onClick functionality to project list
-// list.forEach(function(item) {
-//   item.addEventListener('click', function() {
-//     // project name/id
-//     let itemId = item.classList[1];
-    
-//     projDisplay.classList.remove('slide-in');
-//     projDisplay.classList.add('slide-out');
-//     // display description column title
-//     headingDescription.classList.add('active');
-//     // reset margin
-//     projectDescriptionCol.style.margin = '0';
-//     // display project descriptions
-//     projDisplay.style.display = 'flex';
-
-//     screensGrid.classList.add('shaded');
-
-//     // reset active
-//     list.forEach(function(item) {
-//       item.classList.remove('active');
-//     });
-
-//     item.classList.toggle('active');
-
-//     // change data - timeout to correspond to animation
-//     let changeData = async () => {
-//       names.innerText = data[itemId].name;
-//       descriptions.innerText = data[itemId].description;
-
-//       // reset skills
-//       var listSkills = skills.querySelectorAll('li');
-//       listSkills.forEach(function(item) {
-//         item.remove();
-//       });
-
-//       // skills
-//       data[itemId].skills.forEach(function(skill) {
-//         let temp = document.createElement('li');
-//         temp.textContent = skill;
-//         skills.appendChild(temp);
-//       })
-
-//       // add btn 
-//       btn1.href = data[itemId].links[0];
-//       btn2.href = data[itemId].links[1];
-
-//       projImages.style.display = 'flex';
-//       btns.style.display = 'flex';
-
-//       projImg1.src = data[itemId].images[0];
-//       projImg2.src = data[itemId].images[1];
-//       projImg3.src = data[itemId].images[2];
-//       projImg4.src = data[itemId].images[3];
-//     }
-
-//     changeData()
-//     .then(() => {
-//       projDisplay.classList.remove('slide-out');
-//       projDisplay.classList.add('slide-in');
-//     });
-//   })
-// })
