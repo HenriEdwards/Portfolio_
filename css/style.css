@@ -685,9 +685,7 @@ span {
   height: 100%;
 }
 
-.slide-in {
-  animation: in-out 1s ease;
-}
+
 
 .project-column .screenshots-grid img {
   height: 225px;
@@ -1050,11 +1048,26 @@ section:nth-child(odd) .footer .animate.scroll {
   }
 }
 
-@keyframes in-out {
+.slide-out {
+  animation: slide-out 1s ease forwards;
+}
+
+.slide-in {
+  animation: slide-in 1s ease forwards;
+}
+
+
+@keyframes slide-out {
   0% {
     transform: translateX(0%);
   }
-  50% {
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@keyframes slide-in {
+  0% {
     transform: translateX(-150%);
   }
   100% {

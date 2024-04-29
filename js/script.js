@@ -8,10 +8,9 @@ var list = document.querySelectorAll('.project-list-column h3');
 // project description container
 let projDisplay = document.querySelector('.project-display');
 
-// info to change
+// info to change for projects
 let btns = document.querySelector('.btn-box');
 let projImages = document.querySelector('.project-image');
-
 let names = document.querySelector('.project-name');
 let descriptions = document.querySelector('.project-description');
 let skills = document.querySelector('.project-skills-list');
@@ -92,68 +91,81 @@ menuIcon.onclick = () => {
   navbar.classList.toggle('active');
 };
 
-// add onClick functionality to project list
+// This block of code is better suited for slower servers.
+// Animations works asyncly with data changes
+
+// Track animation completion
+let isAnimationComplete = true;
+
 list.forEach(function(item) {
   item.addEventListener('click', function() {
-    // project name/id
     let itemId = item.classList[1];
 
-    // animation project descriptions
-    projDisplay.classList.add('slide-in');
-    // display description column title
-    headingDescription.classList.add('active');
-    // reset margin
-    projectDescriptionCol.style.margin = '0';
-    // display project descriptions
-    projDisplay.style.display = 'flex';
+    if (isAnimationComplete) {
+      isAnimationComplete = false;
 
-    screensGrid.classList.add('shaded');
+      // Slide-out animation begins
+      projDisplay.classList.remove('slide-in');
+      projDisplay.classList.add('slide-out');
+      // Display description column title and reset the margin
+      headingDescription.classList.add('active');
+      projectDescriptionCol.style.margin = '0';
+      // Display project descriptions
+      projDisplay.style.display = 'flex';
+      // Dim grid of images
+      screensGrid.classList.add('shaded');
 
-    // reset active
-    list.forEach(function(item) {
-      item.classList.remove('active');
-    });
-
-    item.classList.toggle('active');
-
-    // change data - timeout to correspond to animation
-    setTimeout(function() {
-      names.innerText = data[itemId].name;
-      descriptions.innerText = data[itemId].description;
-
-      // reset skills
-      var listSkills = skills.querySelectorAll('li');
-      listSkills.forEach(function(item) {
-        item.remove();
+      list.forEach(function(item) {
+        item.classList.remove('active');
       });
 
-      // skills
-      data[itemId].skills.forEach(function(skill) {
-        let temp = document.createElement('li');
-        temp.textContent = skill;
-        skills.appendChild(temp);
-      })
+      item.classList.toggle('active');
 
-      // add btn 
-      btn1.href = data[itemId].links[0];
-      btn2.href = data[itemId].links[1];
+      // change data - timeout to correspond to animation
+      let changeData = async () => {
+        names.innerText = data[itemId].name;
+        descriptions.innerText = data[itemId].description;
 
-      projImages.style.display = 'flex';
-      btns.style.display = 'flex';
+        // Remove prior skills/technologies
+        var listSkills = skills.querySelectorAll('li');
+        listSkills.forEach(function(item) {
+          item.remove();
+        });
 
-      projImg1.src = data[itemId].images[0];
-      projImg2.src = data[itemId].images[1];
-      projImg3.src = data[itemId].images[2];
-      projImg4.src = data[itemId].images[3];
-    }, 500); 
+        // Add project skills/technologies
+        data[itemId].skills.forEach(function(skill) {
+          let temp = document.createElement('li');
+          temp.textContent = skill;
+          skills.appendChild(temp);
+        })
 
+        // add btn 
+        btn1.href = data[itemId].links[0];
+        btn2.href = data[itemId].links[1];
 
-    // remove slide
-    setTimeout(function() {
-      projDisplay.classList.remove('slide-in');
-    }, 1000)
-  })
-})
+        projImages.style.display = 'flex';
+        btns.style.display = 'flex';
+
+        // Update project images
+        projImg1.src = data[itemId].images[0];
+        projImg2.src = data[itemId].images[1];
+        projImg3.src = data[itemId].images[2];
+        projImg4.src = data[itemId].images[3];
+      }
+
+      // Animation end event listener
+      projDisplay.addEventListener('animationend', function() {
+        // Update data and start slide-in animation
+        changeData()
+          .then(() => {
+            projDisplay.classList.remove('slide-out');
+            projDisplay.classList.add('slide-in');
+            isAnimationComplete = true;
+          });
+      });
+    }
+  });
+});
 
 // scroll sections
 let sections = document.querySelectorAll('section');
@@ -237,3 +249,69 @@ Connection();
 setInterval(() => {
   Connection();
 }, 60000);
+
+
+// OLD CODE - Unfortunately not useful on slow servers (Like netflify free version, should work 100% in a production environment)
+
+// // add onClick functionality to project list
+// list.forEach(function(item) {
+//   item.addEventListener('click', function() {
+//     // project name/id
+//     let itemId = item.classList[1];
+    
+//     projDisplay.classList.remove('slide-in');
+//     projDisplay.classList.add('slide-out');
+//     // display description column title
+//     headingDescription.classList.add('active');
+//     // reset margin
+//     projectDescriptionCol.style.margin = '0';
+//     // display project descriptions
+//     projDisplay.style.display = 'flex';
+
+//     screensGrid.classList.add('shaded');
+
+//     // reset active
+//     list.forEach(function(item) {
+//       item.classList.remove('active');
+//     });
+
+//     item.classList.toggle('active');
+
+//     // change data - timeout to correspond to animation
+//     let changeData = async () => {
+//       names.innerText = data[itemId].name;
+//       descriptions.innerText = data[itemId].description;
+
+//       // reset skills
+//       var listSkills = skills.querySelectorAll('li');
+//       listSkills.forEach(function(item) {
+//         item.remove();
+//       });
+
+//       // skills
+//       data[itemId].skills.forEach(function(skill) {
+//         let temp = document.createElement('li');
+//         temp.textContent = skill;
+//         skills.appendChild(temp);
+//       })
+
+//       // add btn 
+//       btn1.href = data[itemId].links[0];
+//       btn2.href = data[itemId].links[1];
+
+//       projImages.style.display = 'flex';
+//       btns.style.display = 'flex';
+
+//       projImg1.src = data[itemId].images[0];
+//       projImg2.src = data[itemId].images[1];
+//       projImg3.src = data[itemId].images[2];
+//       projImg4.src = data[itemId].images[3];
+//     }
+
+//     changeData()
+//     .then(() => {
+//       projDisplay.classList.remove('slide-out');
+//       projDisplay.classList.add('slide-in');
+//     });
+//   })
+// })
