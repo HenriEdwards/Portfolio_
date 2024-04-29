@@ -57,7 +57,7 @@ var data = {
   hobby: {
     name: "Hobby Website",
     description: "Website dedicated to my hobbies.",
-    skills: ["HTML", "CSS", "JavaScript"],
+    skills: ["HTML", "CSS", "SCSS", "JavaScript"],
     links: ["https://github.com/HenriEdwards/Hobby-Website", "https://voluble-piroshki-c475fd.netlify.app"],
     images: ["./images/img (2).jpg", "./images/img (3).jpg", "./images/img (4).jpg", "./images/img (5).jpg"]
   },
