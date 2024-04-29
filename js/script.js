@@ -147,21 +147,29 @@ list.forEach(function(item) {
         btns.style.display = 'flex';
 
         // Update project images
-        projImg1.src = data[itemId].images[0];
-        projImg2.src = data[itemId].images[1];
-        projImg3.src = data[itemId].images[2];
-        projImg4.src = data[itemId].images[3];
+        await loadImage(projImg1, data[itemId].images[0]);
+        await loadImage(projImg2, data[itemId].images[1]);
+        await loadImage(projImg3, data[itemId].images[2]);
+        await loadImage(projImg4, data[itemId].images[3]);
+
+        projDisplay.classList.remove('slide-out');
+        projDisplay.classList.add('slide-in');
+        isAnimationComplete = true;
+      }
+
+      // Utility function to load image and return a promise
+      function loadImage(img, src) {
+        return new Promise(function(resolve, reject) {
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = src;
+        });
       }
 
       // Animation end event listener
       projDisplay.addEventListener('animationend', function() {
         // Update data and start slide-in animation
-        changeData()
-          .then(() => {
-            projDisplay.classList.remove('slide-out');
-            projDisplay.classList.add('slide-in');
-            isAnimationComplete = true;
-          });
+        changeData();
       });
     }
   });
