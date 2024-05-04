@@ -475,65 +475,6 @@ span {
   background: var(--main-color);
 }
 
-/* frameworks & libraries */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
-  width: 70%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
-  width: 75%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
-  width: 70%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
-  width: 85%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span{
-  width: 60%;
-}
-
-.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span{
-  width: 80%;
-}
-
-
-/* coding */
-.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
-  width: 90%;
-}
-
-.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
-  width: 80%;
-}
-
-.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
-  width: 80%;
-}
-
-.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
-  width: 70%;
-}
-
-.skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span{
-  width: 70%;
-}
-
-/* professional */
-.skills-column:nth-child(3) .skills-content .progress:nth-child(1) .bar span{
-  width: 85%;
-}
-
-.skills-column:nth-child(3) .skills-content .progress:nth-child(2) .bar span{
-  width: 80%;
-}
-
-.skills-column:nth-child(3) .skills-content .progress:nth-child(3) .bar span{
-  width: 85%;
-}
 
 /* project */
 .project {
