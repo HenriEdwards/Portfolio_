@@ -391,13 +391,11 @@ span {
 }
 
 .skills .skills-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr;
   flex-wrap: wrap;
   gap: 5rem;
-}
-
-.skills-row .skills-column {
-  flex: 1 1 40rem;
 }
 
 .skills-column .title {
@@ -418,6 +416,15 @@ span {
   padding: .5rem 1.5rem;
   z-index: 1;
   overflow: hidden;
+
+  display: grid;
+  column-gap: 20rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skills-box .skills-content .progress .icon {
+  max-height: 30px;
 }
 
 .skills-box .skills-content::before {
@@ -438,12 +445,15 @@ span {
 
 .skills-content .progress {
   padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .skills-content .progress h3 {
   font-size: 1.7rem;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .skills-content .progress h3 span {
@@ -853,14 +863,35 @@ section:nth-child(odd) .footer .animate.scroll {
 
 /* BREAKPOINTS */
 
+@media (max-width: 1524px) {
+  .skills-box .skills-content {
+    column-gap: 10rem;
+  }
+
+}
+@media (max-width: 1460px) {
+  .skills-box .skills-content {
+    column-gap: 5rem;
+  }
+
+}
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
   }
 
-  /* .project-row .project-view-column {
-    margin-top: 46px;
-  } */
+  .skills .skills-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+
+  .skills-box .skills-content {
+    column-gap: 40rem;
+  }
 }
 
 @media (max-width: 991px) {
@@ -900,6 +931,10 @@ section:nth-child(odd) .footer .animate.scroll {
 
   .project-row .project-view-column {
     margin-top: 0;
+  }
+
+  .skills-box .skills-content {
+    column-gap: 20rem;
   }
 }
 
@@ -969,6 +1004,11 @@ section:nth-child(odd) .footer .animate.scroll {
   }
 }
 
+@media (max-width: 627px) {
+  .skills-box .skills-content {
+    column-gap: 10rem;
+  }
+}
 @media (max-width: 520px) {
   html {
     font-size: 50%;
@@ -1002,6 +1042,10 @@ section:nth-child(odd) .footer .animate.scroll {
     padding: 10rem 4% 5rem 5%;
   } 
 
+  .skills-box .skills-content {
+    display: flex;
+    flex-direction: column;
+  }
 
   .footer {
     flex-direction: column-reverse;

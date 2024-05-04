@@ -34,7 +34,7 @@ let headingDescription = document.querySelector('.project-view-column h3.title')
 var data = {
   user: {
     name: "User Credentials Manager",
-    description: "This is a full-stack web application built to be a centralized system to manage login information securely, by use of authentication & authorization, cookies and JWT. Please use the following login information: Username: 'Henri', Password: 'justlogin'.",
+    description: "Website built to be a centralized system to manage login information securely, by use of encryption, authentication & authorization, cookies and JWT. Please use the following login information: (Username: 'Henri', Password: 'justlogin' - ADMIN), or create a normal new account.",
     skills: ["React", "Express", "MongoDB", "CSS"],
     links: ["https://github.com/HenriEdwards/MERN-User-Manager", "https://resplendent-pithivier-138605.netlify.app"],
     images: ["./images/login (1).jpg", "./images/login (2).jpg", "./images/login (3).jpg", "./images/login (4).jpg"]
