@@ -80,6 +80,13 @@ var data = {
     skills: ["HTML", "CSS", "JavaScript"],
     links: ["https://github.com/HenriEdwards/ISS", "https://iss-live-locations.netlify.app"],
     images: ["./images/iss1.jpg", "./images/iss2.jpg", "./images/iss3.jpg", "./images/iss4.jpg"]
+  },
+  jsjq: {
+    name: "JavaScript and jQuery Tutorials",
+    description: "This website is developed to be a guiding light for a new developer into the world of JavaScript and jQuery. Website features includes: Development areas, examples, descriptions and more...",
+    skills: ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery"],
+    links: ["https://github.com/HenriEdwards/JavaScript-Web", "https://javascript-and-jquery-tutorials.netlify.app"],
+    images: ["./images/js (1).jpg", "./images/js (2).jpg", "./images/js (3).jpg", "./images/js (4).jpg"]
   }
 };
 
@@ -118,6 +125,11 @@ var imageUrls = [
   "./images/bank (2).jpg",
   "./images/bank (3).jpg",
   "./images/bank (4).jpg",
+
+  "./images/js (1).jpg",
+  "./images/js (2).jpg",
+  "./images/js (3).jpg",
+  "./images/js (4).jpg",
 ];
 
 let loadedImages = [];
@@ -296,6 +308,18 @@ list.forEach(function(item) {
             projImages.appendChild(loadedImages[13]);
             projImages.appendChild(loadedImages[14]);
             projImages.appendChild(loadedImages[15]);
+            break;
+          case 'jsjq':
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[28]);
+            projImages.appendChild(loadedImages[29]);
+            projImages.appendChild(loadedImages[30]);
+            projImages.appendChild(loadedImages[31]);
             break;
         }
 
