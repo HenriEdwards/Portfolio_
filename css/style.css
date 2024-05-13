@@ -112,7 +112,7 @@ section {
 
 .home-content .text-animate {
   position: relative;
-  width: 32.8rem;
+  width: 25.8rem;
 }
 
 .home-content .text-animate h3 {
@@ -1026,7 +1026,7 @@ section:nth-child(odd) .footer .animate.scroll {
 /* KEYFRAMES */
 @keyframes homeBgText {
   0%, 10%, 100% {
-    background-position: -33rem 0;
+    background-position: -25.8rem 0;
   }
   65%, 85% {
     background-position: 0 0;
