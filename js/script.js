@@ -87,6 +87,13 @@ var data = {
     skills: ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery"],
     links: ["https://github.com/HenriEdwards/JavaScript-Web", "https://javascript-and-jquery-tutorials.netlify.app"],
     images: ["./images/js (1).jpg", "./images/js (2).jpg", "./images/js (3).jpg", "./images/js (4).jpg"]
+  },
+  weather: {
+    name: "SA Weather",
+    description: "This web application retrieves and displays the current weather conditions for South Africa's top cities.",
+    skills: ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "AJAX"],
+    links: ["https://github.com/HenriEdwards/Weather", "https://za-city-weather.netlify.app"],
+    images: ["./images/weather.jpg", "./images/weather.jpg", "./images/weather.jpg", "./images/weather.jpg"]
   }
 };
 
@@ -130,6 +137,11 @@ var imageUrls = [
   "./images/js (2).jpg",
   "./images/js (3).jpg",
   "./images/js (4).jpg",
+
+  "./images/weather (1).jpg",
+  "./images/weather (2).jpg",
+  "./images/weather (3).jpg",
+  "./images/weather (4).jpg",
 ];
 
 let loadedImages = [];
@@ -320,6 +332,18 @@ list.forEach(function(item) {
             projImages.appendChild(loadedImages[29]);
             projImages.appendChild(loadedImages[30]);
             projImages.appendChild(loadedImages[31]);
+            break;
+          case 'weather':
+            // Remove images
+            while (projImages.firstChild) {
+              projImages.removeChild(projImages.firstChild);
+            }
+
+            // Add new images
+            projImages.appendChild(loadedImages[32]);
+            projImages.appendChild(loadedImages[33]);
+            projImages.appendChild(loadedImages[34]);
+            projImages.appendChild(loadedImages[35]);
             break;
         }
 
