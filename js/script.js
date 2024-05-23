@@ -91,7 +91,7 @@ var data = {
   weather: {
     name: "SA Weather",
     description: "This web application retrieves and displays the current weather conditions for South Africa's top cities.",
-    skills: ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "AJAX"],
+    skills: ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery"],
     links: ["https://github.com/HenriEdwards/Weather", "https://za-city-weather.netlify.app"],
     images: ["./images/weather.jpg", "./images/weather.jpg", "./images/weather.jpg", "./images/weather.jpg"]
   }
