@@ -154,7 +154,6 @@ function preloadImages(imageUrls) {
     imagesToLoad--;
     if (imagesToLoad === 0) {
       // All images have been loaded
-      // You can now use the preloaded images in your JavaScript code
       console.log('All images have been preloaded.');
       console.log(loadedImages);
     }
